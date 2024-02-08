@@ -4,7 +4,7 @@ import cv2.aruco as aruco
 import numpy as np
 from datetime import datetime
 
-yaml_file_path = '/home/adriel/cu_ws/src/opcv/config/ids_params.yaml'
+yaml_file_path = '/path/to/your/folder/ArUco-colour-overlay/opcv/opcv/config/ids_params.yaml'
 
 class cngColPic():
     def __init__(self):

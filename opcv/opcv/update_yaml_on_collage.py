@@ -11,7 +11,7 @@ collage_dim = [16,16] # x, y
 ##############################
 
 ##############################
-yaml_file_path = '/home/adriel/cu_ws/src/opcv/config/ids_params.yaml'
+yaml_file_path = '/path/to/your/folder/ArUco-colour-overlay/opcv/opcv/config/ids_params.yaml'
 ##############################
 
 order_o_markers = []
