@@ -18,8 +18,6 @@ git clone https://github.com/Xpect8tions/ArUco-colour-overlay
 
 > \*: Some programs may not work as intended on other operating systems
 
-note: before starting the program, remember to update the path to your packages in the code before running it.
-
 ## How to use
 
 once everything is completed, you can begin by going to where you downloaded the package and first running the [update_yaml_on_collage.py](./opcv/opcv/update_yaml_on_collage.py) file. You should see an image of the generated collage. (example below)
