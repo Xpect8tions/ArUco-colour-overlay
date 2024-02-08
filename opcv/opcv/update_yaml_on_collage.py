@@ -2,18 +2,23 @@ import cv2 as cv
 import random
 import numpy as np
 import yaml
+import os
 
 ##############################
 max_marker_id = 1023
 aruco_dict = cv.aruco.getPredefinedDictionary(cv.aruco.DICT_ARUCO_ORIGINAL)
 marker_size = 42
 collage_dim = [16,16] # x, y
+relative_path_to_config = '../config/ids_params.yaml'
+relative_path_to_image = 'images/collage16.jpg'
 ##############################
 
-##############################
-yaml_file_path = '/path/to/your/folder/ArUco-colour-overlay/opcv/opcv/config/ids_params.yaml'
-##############################
+current_directory = os.path.dirname(os.path.abspath(__file__))
+yaml_file_path = os.path.join(current_directory, relative_path_to_config)
+path_to_image = os.path.join(current_directory, relative_path_to_image)
 
+print(f'current_directory = {current_directory}')
+print(f'path to image = {path_to_image}')
 order_o_markers = []
 max_num_o_mark_in_coll = collage_dim[0] * collage_dim[1]
 print(f'max num o markers in collage = {max_num_o_mark_in_coll}')
@@ -47,7 +52,7 @@ for i in range(len(order_o_markers)):
     i += 1
 cv.imshow('collage16', collage)
 cv.waitKey(0)
-cv.imwrite('collage16.jpg', collage)
+cv.imwrite(str(path_to_image), collage)
 
 iteration = 0
 list_list = []
@@ -59,15 +64,6 @@ for mar_id in order_o_markers:
     
     y = int(np.floor(iteration/collage_dim[1]))
     x = iteration % collage_dim[0]
-
-    # if iteration < 10:
-    #     iteration = f'000{iteration}'
-    # if iteration < 100:
-    #     iteration = f'00{iteration}'
-    # elif iteration < 1000:
-    #     iteration = f'0{iteration}'
-    # else:
-    #     iteration = str(iteration)
 
     print(f'iteration = {iteration}')
     status = [mar_id,[x,y]]
