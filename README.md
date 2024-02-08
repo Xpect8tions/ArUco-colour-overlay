@@ -40,7 +40,7 @@ within the `/opcv` directory, there are 2 main folders, `/config` and `/opcv`.
 
 ### /opcv
 
-[This folder](./opcv/opcv/) contains the main codes that are to be run. [update_yaml_on_collage.py](./opcv/opcv/update_yaml_on_collage.py) is able to generate a 16\*16 collage of ArUco markers (somehow unable to generate larger collages) and will update the yaml config file on the ids, locations and status of the marker. [change_colours_pic.py](./opcv/opcv/change_colours_pic.py) is the main code that I managed to get work. For more details [click here](./opcv/opcv/README.md)
+[This folder](./opcv/opcv/) contains the main codes that are to be run. [update_yaml_on_collage.py](./opcv/opcv/update_yaml_on_collage.py) is able to generate a 16 x 16 collage of ArUco markers (somehow unable to generate larger collages) and will update the yaml config file on the ids, locations and status of the marker. [change_colours_pic.py](./opcv/opcv/change_colours_pic.py) is the main code that I managed to get work. For more details [click here](./opcv/opcv/README.md)
 
 ### /config
 
