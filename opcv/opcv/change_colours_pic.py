@@ -6,17 +6,19 @@ from datetime import datetime
 import os
 
 relative_path_to_config = '../config/ids_params.yaml'
-relative_path_to_image = 'images/collage16.jpg'
+relative_path_to_src_image = 'images/collage16.jpg'
+relative_path_to_image_save = 'images/collage16_colourised.jpg'
 current_directory = os.path.dirname(os.path.abspath(__file__))
 yaml_file_path = os.path.join(current_directory, relative_path_to_config)
-path_to_image = os.path.join(current_directory, relative_path_to_image)
+path_to_src_image = os.path.join(current_directory, relative_path_to_src_image)
+path_to_write_image = os.path.join(current_directory, relative_path_to_image_save)
 
 class cngColPic():
     def __init__(self):
         time_start = datetime.now()
         self.mask = None
         # Read the image
-        self.img = cv.imread(path_to_image)
+        self.img = cv.imread(path_to_src_image)
         self.size = self.img.shape
         print(f'size = {self.size}')
         det_params = aruco.DetectorParameters()   
@@ -91,7 +93,7 @@ class cngColPic():
         cv.imshow('img',self.img)
         cv.waitKey(0) 
         cv.destroyAllWindows()
-        cv.imwrite('collage16_colourised.jpg', self.img)
+        cv.imwrite(relative_path_to_image_save, self.img)
         print(f'write')
 
     def circleCol(self, stat, corners, b, g, r):
